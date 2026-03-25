@@ -1,0 +1,14 @@
+@import url(./asset/css/header/header.css);
+@import url(./asset/css/main/main.css);
+@import url(./asset/css/footer/footer.css);
+
+body {
+    background-color: whitesmoke;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
