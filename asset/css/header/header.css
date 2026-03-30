@@ -5,5 +5,5 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1260px;
+    width: 100%;
 }

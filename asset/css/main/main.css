@@ -1,8 +1,11 @@
 main {
-    width: 1260px;
-    margin:15px auto;
+    width: 100%;
+    max-width: 1260px;
+    margin: 15px auto;
+    padding: 0 15px;
 }
 
+/* ── Layout : NAV (gauche) + contenu (droite) ── */
 main > section:first-child {
     display: flex;
     gap: 15px;
@@ -10,18 +13,20 @@ main > section:first-child {
 
 main > section:first-child > div:first-child {
     width: 250px;
+    flex-shrink: 0;
     background: grey;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 0px;
 }
 
 main > section:first-child > div:last-child {
     flex: 1;
+    min-width: 0;
 }
 
+/* ── Hero ── */
 main section section:first-child {
     background: rgb(245, 116, 23);
     color: white;
@@ -31,25 +36,25 @@ main section section:first-child {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    
-    
 }
 
-section button{
+section button {
     padding: 10px 30px;
     background: white;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     color: orange;
+    cursor: pointer;
 }
 
+/* ── Services ── */
 main section section:last-child h2 {
     background: rgb(83, 146, 10);
     color: white;
     text-align: center;
     padding: 10px;
-    margin-top: 15px ;
+    margin-top: 15px;
 }
 
 main section section:last-child > div {
@@ -66,10 +71,9 @@ main section section:last-child > div > div {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    
 }
 
+/* ── Section Info ── */
 main > section:last-child {
     margin-top: 15px;
     height: 350px;
@@ -80,4 +84,69 @@ main > section:last-child {
     align-items: center;
 }
 
+/* ============================================================
+   RESPONSIVE — TABLETTE (max 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+    main > section:first-child > div:first-child {
+        width: 180px;
+    }
+
+    main section section:last-child > div {
+        gap: 20px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (max 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+    main {
+        padding: 0 10px;
+    }
+
+    /* NAV passe au-dessus du contenu */
+    main > section:first-child {
+        flex-direction: column;
+    }
+
+    main > section:first-child > div:first-child {
+        width: 100%;
+        height: 80px;
+    }
+
+    /* Hero moins haute */
+    main section section:first-child {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    /* Services en colonne */
+    main section section:last-child > div {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    main section section:last-child > div > div {
+        height: 120px;
+    }
+
+    /* Section Info moins haute */
+    main > section:last-child {
+        height: 200px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — PETIT MOBILE (max 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+    section button {
+        width: 100%;
+    }
+
+    main > section:last-child {
+        height: 160px;
+    }
+}
  
